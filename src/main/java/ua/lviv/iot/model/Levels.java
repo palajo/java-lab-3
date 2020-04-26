@@ -1,4 +1,7 @@
 package ua.lviv.iot.model;
 
-public class Levels {
+public enum Levels {
+    LOW,
+    MIDDLE,
+    HIGH
 }
