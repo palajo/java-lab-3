@@ -8,7 +8,7 @@ public class BTR extends AbstractWartechnic {
 
     double trunkCapacity;
 
-    public BTR(double engineVolume, double fuelConsumption, int maxSpeed, int passengersCapacity, double fireRange,
+    public BTR(int engineVolume, double fuelConsumption, int maxSpeed, int passengersCapacity, double fireRange,
                Levels damage, int armorType, int wheelsQuantity, double trunkCapacity) {
         super(engineVolume, fuelConsumption, maxSpeed, passengersCapacity, fireRange, damage, armorType);
         this.wheelsQuantity = wheelsQuantity;

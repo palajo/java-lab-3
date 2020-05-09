@@ -1,7 +1,8 @@
 package ua.lviv.iot.model;
 
 public class AbstractWartechnic {
-    double engineVolume;
+
+    int engineVolume;
     double fuelConsumption;
     int maxSpeed;
     int passengersCapacity;
@@ -9,7 +10,7 @@ public class AbstractWartechnic {
     Levels damage;
     int armorType;
 
-    public AbstractWartechnic(double engineVolume, double fuelConsumption, int maxSpeed, int passengersCapacity,
+    public AbstractWartechnic(int engineVolume, double fuelConsumption, int maxSpeed, int passengersCapacity,
                               double fireRange, Levels damage, int armorType) {
         this.engineVolume = engineVolume;
         this.fuelConsumption = fuelConsumption;
@@ -23,11 +24,11 @@ public class AbstractWartechnic {
     public AbstractWartechnic() {
     }
 
-    public double getEngineVolume() {
+    public int getEngineVolume() {
         return engineVolume;
     }
 
-    public void setEngineVolume(double engineVolume) {
+    public void setEngineVolume(int engineVolume) {
         this.engineVolume = engineVolume;
     }
 
