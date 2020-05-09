@@ -15,7 +15,7 @@ public class WartechnicManagerTest extends BaseWartechnicManagerTest {
     @BeforeEach
     public void setUp(){
         wartechnicManager = new WartechnicManager();
-        wartechnicManager.addTanksToGarage(tanksInGarage);
+        wartechnicManager.addTanksToGarage(tanks);
     }
 
     @Test
