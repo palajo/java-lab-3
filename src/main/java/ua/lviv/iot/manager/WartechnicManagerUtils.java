@@ -3,7 +3,6 @@ package ua.lviv.iot.manager;
 import ua.lviv.iot.model.SortType;
 import ua.lviv.iot.model.Tank;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -19,35 +18,48 @@ public class WartechnicManagerUtils {
 
     };
 
+    public static void sortTanksByPatency(final List<Tank> tanks, final SortType sortType) {
 
-    public final Comparator<Tank> getCompareByPatency() {
-        return compareByPatency;
+        Comparator<Tank> comparator = new Comparator<Tank>() {
+
+            @Override
+            public int compare(final Tank firstTank, final Tank secondTank) {
+
+                return firstTank.getPatency().compareTo(secondTank.getPatency());
+
+            }
+
+        };
+
+        tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
+
     }
 
-
-    public final void setCompareByPatency(final Comparator<Tank> compareByPatency) {
-        this.compareByPatency = compareByPatency;
-    }
-
-
-    public static void sortTanksByPassengersCapacity(List<Tank> tanks, SortType sortType) {
+    public static void sortTanksByPassengersCapacity(final List<Tank> tanks, final SortType sortType) {
 
         Comparator<Tank> comparator = Comparator.comparing(Tank::getPassengersCapacity);
         tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
 
     }
 
-
-    public static void sortTanksByArmorType(List<Tank> tanks, SortType sortType) {
+    public static void sortTanksByArmorType(final List<Tank> tanks,final SortType sortType) {
 
         Comparator<Tank> comparator = Comparator.comparing(Tank::getArmorType);
         tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
 
     }
 
+    public final Comparator<Tank> getCompareByPatency() {
+        return compareByPatency;
+    }
+
+    public final void setCompareByPatency(final Comparator<Tank> compareByPatency) {
+        /** asked for comment */
+        this.compareByPatency = compareByPatency;
+    }
 
     // static inner class sorting
-    static class sortTanksByMaxSpeed implements Comparator<Tank>{
+    static class sortTanksByMaxSpeed implements Comparator<Tank> {
 
         @Override
         public int compare(final Tank firstTank, final Tank secondTank) {
@@ -56,9 +68,15 @@ public class WartechnicManagerUtils {
 
     }
 
-    // lambda sorting
-    public static void sortLambdaTest(final ArrayList<Tank> tanks) {
-        tanks.sort((o1, o2) -> o1.getEngineVolume() - o2.getEngineVolume());
+
+    // inner class sorting
+    class sortTanksByOverviewInDegrees implements Comparator<Tank> {
+
+        @Override
+        public int compare(final Tank firstTank, final Tank secondTank) {
+            return firstTank.getOverviewInDegrees() - secondTank.getOverviewInDegrees();
+        }
+
     }
 
 

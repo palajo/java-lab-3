@@ -2,31 +2,15 @@ package ua.lviv.iot.manager;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import ua.lviv.iot.model.Levels;
 import ua.lviv.iot.model.SortType;
 
 public class Tests extends BaseWartechnicManagerTest {
 
+
+    // static inner class
     @Test
-    void staticInnerClassSortTest() {
-    }
-
-    @Test
-    void innerClassSortTest() {
-    }
-
-    @Test
-    public void testSortLambdaTest() {
-        tanks.sort((o1, o2) -> o1.getEngineVolume() - o2.getEngineVolume());
-
-        Assertions.assertEquals(4, tanks.get(0).getEngineVolume());
-        Assertions.assertEquals(5, tanks.get(1).getEngineVolume());
-        Assertions.assertEquals(6, tanks.get(2).getEngineVolume());
-    }
-
-
-    // inner class
-    @Test
-    public void testSortingTanksByMaxSpeed(){
+    public void testSortingTanksByMaxSpeed() {
         tanks.sort(new WartechnicManagerUtils.sortTanksByMaxSpeed());
 
         Assertions.assertEquals(100, tanks.get(0).getMaxSpeed());
@@ -35,4 +19,13 @@ public class Tests extends BaseWartechnicManagerTest {
     }
 
 
+    // anonymous inner class
+    @Test
+    public void testSortingTanksByPatency(){
+        WartechnicManagerUtils.sortTanksByPatency(tanks, SortType.ASCENDING);
+
+        Assertions.assertEquals(Levels.LOW, tanks.get(0).getPatency());
+        Assertions.assertEquals(Levels.MIDDLE, tanks.get(1).getPatency());
+        Assertions.assertEquals(Levels.HIGH, tanks.get(2).getPatency());
+    }
 }

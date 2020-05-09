@@ -1,7 +1,5 @@
 package ua.lviv.iot.model;
 
-import ua.lviv.iot.manager.WartechnicManager;
-
 public class BTR extends AbstractWartechnic {
 
     int wheelsQuantity;
