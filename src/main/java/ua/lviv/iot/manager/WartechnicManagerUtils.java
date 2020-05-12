@@ -8,8 +8,8 @@ import java.util.List;
 
 public class WartechnicManagerUtils {
 
-
-    private Comparator<Tank> compareByPatency = new Comparator<Tank>() {
+    //anonymous class with comparator
+    private static Comparator<Tank> compareByPatency = new Comparator<Tank>() {
 
         @Override
         public int compare(final Tank firstTank, final Tank secondTank) {
@@ -18,66 +18,62 @@ public class WartechnicManagerUtils {
 
     };
 
-    public static void sortTanksByPatency(final List<Tank> tanks, final SortType sortType) {
+    // method for - anonymous class with comparator
+    public static void sortByPatency(final List<Tank> tanks, final SortType sortType) {
 
-        Comparator<Tank> comparator = new Comparator<Tank>() {
-
-            @Override
-            public int compare(final Tank firstTank, final Tank secondTank) {
-
-                return firstTank.getPatency().compareTo(secondTank.getPatency());
-
-            }
-
-        };
-
-        tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
+        tanks.sort(sortType == SortType.ASCENDING ? compareByPatency : compareByPatency.reversed());
 
     }
 
-    public static void sortTanksByPassengersCapacity(final List<Tank> tanks, final SortType sortType) {
-
-        Comparator<Tank> comparator = Comparator.comparing(Tank::getPassengersCapacity);
-        tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
-
-    }
-
-    public static void sortTanksByArmorType(final List<Tank> tanks,final SortType sortType) {
-
-        Comparator<Tank> comparator = Comparator.comparing(Tank::getArmorType);
-        tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
-
-    }
-
-    public final Comparator<Tank> getCompareByPatency() {
-        return compareByPatency;
-    }
-
-    public final void setCompareByPatency(final Comparator<Tank> compareByPatency) {
-        /** asked for comment */
-        this.compareByPatency = compareByPatency;
-    }
-
-    // static inner class sorting
-    static class sortTanksByMaxSpeed implements Comparator<Tank> {
-
+    // static inner class with comparator
+    private static class tanksByMaxSpeedSorter implements Comparator<Tank> {
         @Override
         public int compare(final Tank firstTank, final Tank secondTank) {
             return firstTank.getMaxSpeed() - secondTank.getMaxSpeed();
         }
-
     }
 
+    // method for - static class with comparator
+    public static void sortByMaxSpeed(final List<Tank> tanks, final SortType sortType) {
 
-    // inner class sorting
-    class sortTanksByOverviewInDegrees implements Comparator<Tank> {
-
-        @Override
-        public int compare(final Tank firstTank, final Tank secondTank) {
-            return firstTank.getOverviewInDegrees() - secondTank.getOverviewInDegrees();
+        if (sortType == SortType.ASCENDING) {
+            tanks.sort(new tanksByMaxSpeedSorter());
+        }
+        if (sortType == SortType.DESCENDING) {
+            tanks.sort(new tanksByMaxSpeedSorter().reversed());
         }
 
     }
 
+    //inner class with comparator
+    private class TanksByOverviewInDegreesSorter implements Comparator<Tank> {
+        @Override
+        public int compare(final Tank firstTank, final Tank secondTank) {
+            return firstTank.getOverviewInDegrees() - secondTank.getOverviewInDegrees();
+        }
+    }
+
+    // method for - inner class with comparator
+    public final void sortByOverviewInDegrees(final List<Tank> tanks, final SortType sortType) {
+
+        if (sortType == SortType.ASCENDING) {
+            tanks.sort(new TanksByOverviewInDegreesSorter());
+        }
+        if (sortType == SortType.DESCENDING) {
+            tanks.sort(new TanksByOverviewInDegreesSorter().reversed());
+        }
+
+    }
+
+    // realizing sorting from lab3
+    public static void sortTanksByPassengersCapacity(final List<Tank> tanks, final SortType sortType) {
+        Comparator<Tank> comparator = Comparator.comparing(Tank::getPassengersCapacity);
+        tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
+    }
+
+    public static void sortTanksByArmorType(final List<Tank> tanks,final SortType sortType) {
+        Comparator<Tank> comparator = Comparator.comparing(Tank::getArmorType);
+        tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
+    }
 
 }

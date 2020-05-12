@@ -1,6 +1,6 @@
 package ua.lviv.iot.manager;
-import ua.lviv.iot.model.SortType;
 
+import ua.lviv.iot.model.SortType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

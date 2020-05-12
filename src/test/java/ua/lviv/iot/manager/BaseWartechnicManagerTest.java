@@ -22,5 +22,4 @@ public abstract class BaseWartechnicManagerTest {
                 Levels.LOW, 2, Levels.MIDDLE, 180 ));
     }
 
-
 }

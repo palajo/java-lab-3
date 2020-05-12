@@ -79,4 +79,5 @@ public class AbstractWartechnic {
     public void setArmorType(int armorType) {
         this.armorType = armorType;
     }
+
 }

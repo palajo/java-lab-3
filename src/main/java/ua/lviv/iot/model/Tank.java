@@ -30,4 +30,5 @@ public class Tank extends AbstractWartechnic {
     public void setOverviewInDegrees(int overviewInDegrees) {
         this.overviewInDegrees = overviewInDegrees;
     }
+
 }

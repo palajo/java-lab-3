@@ -10,7 +10,7 @@ public class Artillery extends AbstractWartechnic {
         this.rocketsQuantity = rocketsQuantity;
     }
 
-    public Artillery(){
+    public Artillery() {
     }
 
     public int getRocketsQuantity() {
