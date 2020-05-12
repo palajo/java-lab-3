@@ -80,4 +80,22 @@ public class AbstractWartechnic {
         this.armorType = armorType;
     }
 
+
+    public String getHeaders() {
+        return "engineVolume" + "," + " fuelConsumption " + "," + " maxSpeed" + "," + " passengersCapacity"
+                + "," + "fireRange" + "," + "damage" + "," + "armorType" + ".";
+    }
+
+    public String toCSV() {
+        return    "engineVolume = " + getEngineVolume() + ","
+                + " fuelConsumption = " + getFuelConsumption() + ","
+                + " maxSpeed = " + getMaxSpeed() + ","
+                + " passengersCapacity = " + getPassengersCapacity()
+                + " fireRange = " + getFuelConsumption() + ","
+                + " damage = " + getDamage() + ","
+                + " armorType = " + getArmorType();
+
+    }
+
+
 }

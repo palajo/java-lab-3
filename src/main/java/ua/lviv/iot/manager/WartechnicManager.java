@@ -26,4 +26,10 @@ public class WartechnicManager {
         return result;
     }
 
+    public final void displayTanksInfo() {
+        for (Tank tank : this.tanks) {
+            System.out.println(tank);
+        }
+    }
+
 }

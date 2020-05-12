@@ -31,4 +31,12 @@ public class Tank extends AbstractWartechnic {
         this.overviewInDegrees = overviewInDegrees;
     }
 
+    public final String getHeaders() {
+        return super.getHeaders() + "," + " patency" + "," + " overviewInDegrees";
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + "," + " patency = " + getPatency() + "," + " overviewInDegrees" + getOverviewInDegrees();
+    }
+
 }
