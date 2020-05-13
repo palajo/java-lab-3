@@ -1,16 +1,17 @@
 package ua.lviv.iot.model;
 
 public class AbstractWartechnic {
-    double engineVolume;
+
+    int engineVolume;
     double fuelConsumption;
-    double maxSpeed;
+    int maxSpeed;
     int passengersCapacity;
     double fireRange;
     Levels damage;
-    Types armorType;
+    int armorType;
 
-    public AbstractWartechnic(double engineVolume, double fuelConsumption, double maxSpeed, int passengersCapacity,
-                              double fireRange, Levels damage, Types armorType) {
+    public AbstractWartechnic(int engineVolume, double fuelConsumption, int maxSpeed, int passengersCapacity,
+                              double fireRange, Levels damage, int armorType) {
         this.engineVolume = engineVolume;
         this.fuelConsumption = fuelConsumption;
         this.maxSpeed = maxSpeed;
@@ -23,11 +24,11 @@ public class AbstractWartechnic {
     public AbstractWartechnic() {
     }
 
-    public double getEngineVolume() {
+    public int getEngineVolume() {
         return engineVolume;
     }
 
-    public void setEngineVolume(double engineVolume) {
+    public void setEngineVolume(int engineVolume) {
         this.engineVolume = engineVolume;
     }
 
@@ -39,11 +40,11 @@ public class AbstractWartechnic {
         this.fuelConsumption = fuelConsumption;
     }
 
-    public double getMaxSpeed() {
+    public int getMaxSpeed() {
         return maxSpeed;
     }
 
-    public void setMaxSpeed(double maxSpeed) {
+    public void setMaxSpeed(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
 
@@ -71,11 +72,12 @@ public class AbstractWartechnic {
         this.damage = damage;
     }
 
-    public Types getArmorType() {
+    public int getArmorType() {
         return armorType;
     }
 
-    public void setArmorType(Types armorType) {
+    public void setArmorType(int armorType) {
         this.armorType = armorType;
     }
+
 }
