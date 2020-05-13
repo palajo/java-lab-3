@@ -9,13 +9,13 @@ public class WartechnicManager {
 
     private List<Tank> tanks = new ArrayList<>();
 
-    public void addTanksToGarage(List<Tank> tanksToAdd) {
+    public final void addTanksToGarage(final List<Tank> tanksToAdd) {
         this.tanks.addAll(tanksToAdd);
     }
 
-    public List<Tank> findTechnicByFuelConsumption(double fuelConsumptionToCompare) {
+    public final List<Tank> findTechnicByFuelConsumption(final double fuelConsumptionToCompare) {
 
-        ArrayList<Tank> result = new ArrayList<Tank>();
+        ArrayList<Tank> result = new ArrayList<>();
 
         for (Tank tank : this.tanks) {
             if (tank.getFuelConsumption() < fuelConsumptionToCompare) {

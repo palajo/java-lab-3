@@ -9,7 +9,7 @@ import java.util.List;
 public class WartechnicManagerUtils {
 
     //anonymous class with comparator
-    private static Comparator<Tank> compareByPatency = new Comparator<Tank>() {
+    private static Comparator<Tank> compareByPatency = new Comparator<>() {
 
         @Override
         public int compare(final Tank firstTank, final Tank secondTank) {
@@ -26,7 +26,7 @@ public class WartechnicManagerUtils {
     }
 
     // static inner class with comparator
-    private static class tanksByMaxSpeedSorter implements Comparator<Tank> {
+    private static class TanksByMaxSpeedSorter implements Comparator<Tank> {
         @Override
         public int compare(final Tank firstTank, final Tank secondTank) {
             return firstTank.getMaxSpeed() - secondTank.getMaxSpeed();
@@ -37,10 +37,10 @@ public class WartechnicManagerUtils {
     public static void sortByMaxSpeed(final List<Tank> tanks, final SortType sortType) {
 
         if (sortType == SortType.ASCENDING) {
-            tanks.sort(new tanksByMaxSpeedSorter());
+            tanks.sort(new TanksByMaxSpeedSorter());
         }
         if (sortType == SortType.DESCENDING) {
-            tanks.sort(new tanksByMaxSpeedSorter().reversed());
+            tanks.sort(new TanksByMaxSpeedSorter().reversed());
         }
 
     }
@@ -71,7 +71,7 @@ public class WartechnicManagerUtils {
         tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
     }
 
-    public static void sortTanksByArmorType(final List<Tank> tanks,final SortType sortType) {
+    public static void sortTanksByArmorType(final List<Tank> tanks, final SortType sortType) {
         Comparator<Tank> comparator = Comparator.comparing(Tank::getArmorType);
         tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
     }

@@ -1,12 +1,12 @@
-ua/lviv/iot/manager/WartechnicManagerUtils$2.class
 ua/lviv/iot/manager/WartechnicManagerUtils.class
 ua/lviv/iot/model/SortType.class
+ua/lviv/iot/manager/WartechnicManagerUtils$TanksByMaxSpeedSorter.class
 ua/lviv/iot/model/Artillery.class
 ua/lviv/iot/model/Tank.class
 ua/lviv/iot/model/BTR.class
+ua/lviv/iot/IOMmanager/TankWriter.class
 ua/lviv/iot/manager/WartechnicManager.class
 ua/lviv/iot/model/AbstractWartechnic.class
 ua/lviv/iot/model/Levels.class
 ua/lviv/iot/manager/WartechnicManagerUtils$1.class
-ua/lviv/iot/manager/WartechnicManagerUtils$sortTanksByOverviewInDegrees.class
-ua/lviv/iot/manager/WartechnicManagerUtils$sortTanksByMaxSpeed.class
+ua/lviv/iot/manager/WartechnicManagerUtils$TanksByOverviewInDegreesSorter.class

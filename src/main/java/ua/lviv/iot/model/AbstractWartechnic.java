@@ -2,16 +2,16 @@ package ua.lviv.iot.model;
 
 public class AbstractWartechnic {
 
-    int engineVolume;
-    double fuelConsumption;
-    int maxSpeed;
-    int passengersCapacity;
-    double fireRange;
-    Levels damage;
-    int armorType;
+    private int engineVolume;
+    private double fuelConsumption;
+    private int maxSpeed;
+    private int passengersCapacity;
+    private double fireRange;
+    private Levels damage;
+    private int armorType;
 
-    public AbstractWartechnic(int engineVolume, double fuelConsumption, int maxSpeed, int passengersCapacity,
-                              double fireRange, Levels damage, int armorType) {
+    public AbstractWartechnic(final int engineVolume, final double fuelConsumption, final int maxSpeed, final int passengersCapacity,
+                              final double fireRange, final Levels damage, final int armorType) {
         this.engineVolume = engineVolume;
         this.fuelConsumption = fuelConsumption;
         this.maxSpeed = maxSpeed;
@@ -24,59 +24,59 @@ public class AbstractWartechnic {
     public AbstractWartechnic() {
     }
 
-    public int getEngineVolume() {
+    public final int getEngineVolume() {
         return engineVolume;
     }
 
-    public void setEngineVolume(int engineVolume) {
+    public final void setEngineVolume(final int engineVolume) {
         this.engineVolume = engineVolume;
     }
 
-    public double getFuelConsumption() {
+    public final double getFuelConsumption() {
         return fuelConsumption;
     }
 
-    public void setFuelConsumption(double fuelConsumption) {
+    public final void setFuelConsumption(final double fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
 
-    public int getMaxSpeed() {
+    public final int getMaxSpeed() {
         return maxSpeed;
     }
 
-    public void setMaxSpeed(int maxSpeed) {
+    public final void setMaxSpeed(final int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
 
-    public int getPassengersCapacity() {
+    public final int getPassengersCapacity() {
         return passengersCapacity;
     }
 
-    public void setPassengersCapacity(int passengersCapacity) {
+    public final void setPassengersCapacity(final int passengersCapacity) {
         this.passengersCapacity = passengersCapacity;
     }
 
-    public double getFireRange() {
+    public final double getFireRange() {
         return fireRange;
     }
 
-    public void setFireRange(double fireRange) {
+    public final void setFireRange(final double fireRange) {
         this.fireRange = fireRange;
     }
 
-    public Levels getDamage() {
+    public final Levels getDamage() {
         return damage;
     }
 
-    public void setDamage(Levels damage) {
+    public final void setDamage(final Levels damage) {
         this.damage = damage;
     }
 
-    public int getArmorType() {
+    public final int getArmorType() {
         return armorType;
     }
 
-    public void setArmorType(int armorType) {
+    public final void setArmorType(final int armorType) {
         this.armorType = armorType;
     }
 
@@ -94,7 +94,6 @@ public class AbstractWartechnic {
                 + " fireRange = " + getFuelConsumption() + ","
                 + " damage = " + getDamage() + ","
                 + " armorType = " + getArmorType();
-
     }
 
 
