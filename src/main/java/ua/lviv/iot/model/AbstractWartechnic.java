@@ -1,6 +1,6 @@
 package ua.lviv.iot.model;
 
-public class AbstractWartechnic {
+public abstract class AbstractWartechnic {
 
     private int engineVolume;
     private double fuelConsumption;
@@ -82,19 +82,18 @@ public class AbstractWartechnic {
 
 
     public String getHeaders() {
-        return "[" + "engineVolume" + "," + " fuelConsumption " + "," + " maxSpeed" + "," + " passengersCapacity"
-                + "," + "fireRange" + "," + "damage" + "," + "armorType" + "]";
+        return "engineVolume" + "," + "fuelConsumption" + "," + "maxSpeed" + "," + "passengersCapacity"
+                + "," + "fireRange" + "," + "damage" + "," + "armorType";
     }
 
     public String toCSV() {
-        return  "["
-                + "engineVolume = " + getEngineVolume() + ","
-                + " fuelConsumption = " + getFuelConsumption() + ","
-                + " maxSpeed = " + getMaxSpeed() + ","
-                + " passengersCapacity = " + getPassengersCapacity()
-                + " fireRange = " + getFuelConsumption() + ","
-                + " damage = " + getDamage() + ","
-                + " armorType = " + getArmorType();
+        return getEngineVolume() + ","
+                + getFuelConsumption() + ","
+                + getMaxSpeed() + ","
+                + getPassengersCapacity() + ","
+                + getFuelConsumption() + ","
+                + getDamage() + ","
+                + getArmorType();
     }
 
 

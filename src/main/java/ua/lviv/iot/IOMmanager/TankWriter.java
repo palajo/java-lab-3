@@ -1,5 +1,7 @@
 package ua.lviv.iot.IOMmanager;
 
+import ua.lviv.iot.model.AbstractWartechnic;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;

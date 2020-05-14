@@ -17,7 +17,11 @@ public class Writer {
         Tank supertank = new Tank( 6, 32.0, 160, 8,2,
                 Levels.HIGH, 1, Levels.HIGH, 360 );
 
-        TankWriter.inputStaticTextToFile("text.csv", supertank.toCSV(), supertank.toCSV());
+        Tank supertank1 = new Tank( 6, 32.0, 160, 8,2,
+                Levels.HIGH, 1, Levels.HIGH, 360 );
+
+
+        TankWriter.inputStaticTextToFile("text.csv", supertank.getHeaders(), supertank.toCSV(), supertank1.toCSV());
     }
 
     @Test
@@ -30,7 +34,10 @@ public class Writer {
         Tank supertank = new Tank( 6, 32.0, 160, 8,2,
                 Levels.HIGH, 1, Levels.HIGH, 360 );
 
-        TankWriter.inputStaticTextToFile("text.csv", supertank.toCSV());
+        Tank supertank1 = new Tank( 6, 32.0, 160, 8,2,
+                Levels.HIGH, 1, Levels.HIGH, 360 );
+
+        TankWriter.inputStaticTextToFile("text.csv", supertank.getHeaders(), supertank.toCSV(), supertank1.toCSV());
         TankWriter.outputStaticTextOfFile("text.csv");
     }
 
@@ -41,10 +48,11 @@ public class Writer {
                     Levels.HIGH, 1, Levels.HIGH, 360 );
 
             TankWriter tankStringWriter = new TankWriter(new StringWriter());
+
             tankStringWriter.inputText(supertank.toCSV());
             String expectedExpression = supertank.toCSV() + "\r\n";
-            Assertions.assertEquals(expectedExpression, tankStringWriter.toString());
 
+            Assertions.assertEquals(expectedExpression, tankStringWriter.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
