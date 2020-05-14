@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public abstract class BaseWartechnicManagerTest {
 
+    /*
     protected ArrayList<Tank> tanks;
 
     @BeforeEach
@@ -18,5 +19,5 @@ public abstract class BaseWartechnicManagerTest {
         tanks.add(new Tank( 6, 32.0, 160, 8,2, 1, 360 ));
         tanks.add(new Tank( 6, 32.0, 160, 8,2, 1, 360 ));
     }
-
+     */
 }

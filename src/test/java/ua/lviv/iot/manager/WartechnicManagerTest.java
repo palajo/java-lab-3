@@ -8,6 +8,7 @@ import java.util.List;
 
 public class WartechnicManagerTest extends BaseWartechnicManagerTest {
 
+    /*
     private WartechnicManager wartechnicManager;
 
     @BeforeEach
@@ -23,5 +24,5 @@ public class WartechnicManagerTest extends BaseWartechnicManagerTest {
         Assertions.assertEquals(1, tanks.size());
         Assertions.assertEquals(18.0, tanks.get(0).getFuelConsumption());
     }
-
+    */
 }
