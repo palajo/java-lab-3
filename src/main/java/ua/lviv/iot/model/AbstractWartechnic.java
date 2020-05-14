@@ -82,12 +82,13 @@ public class AbstractWartechnic {
 
 
     public String getHeaders() {
-        return "engineVolume" + "," + " fuelConsumption " + "," + " maxSpeed" + "," + " passengersCapacity"
-                + "," + "fireRange" + "," + "damage" + "," + "armorType" + ".";
+        return "[" + "engineVolume" + "," + " fuelConsumption " + "," + " maxSpeed" + "," + " passengersCapacity"
+                + "," + "fireRange" + "," + "damage" + "," + "armorType" + "]";
     }
 
     public String toCSV() {
-        return    "engineVolume = " + getEngineVolume() + ","
+        return  "["
+                + "engineVolume = " + getEngineVolume() + ","
                 + " fuelConsumption = " + getFuelConsumption() + ","
                 + " maxSpeed = " + getMaxSpeed() + ","
                 + " passengersCapacity = " + getPassengersCapacity()

@@ -30,7 +30,7 @@ public class Writer {
         Tank supertank = new Tank( 6, 32.0, 160, 8,2,
                 Levels.HIGH, 1, Levels.HIGH, 360 );
 
-        TankWriter.inputStaticTextToFile("text.csv", supertank.toCSV(), supertank.toCSV());
+        TankWriter.inputStaticTextToFile("text.csv", supertank.toCSV());
         TankWriter.outputStaticTextOfFile("text.csv");
     }
 
@@ -40,10 +40,10 @@ public class Writer {
             Tank supertank = new Tank( 6, 32.0, 160, 8,2,
                     Levels.HIGH, 1, Levels.HIGH, 360 );
 
-            TankWriter productStringWriter = new TankWriter(new StringWriter());
-            productStringWriter.inputText(supertank.toCSV());
+            TankWriter tankStringWriter = new TankWriter(new StringWriter());
+            tankStringWriter.inputText(supertank.toCSV());
             String expectedExpression = supertank.toCSV() + "\r\n";
-            Assertions.assertEquals(expectedExpression, productStringWriter.toString());
+            Assertions.assertEquals(expectedExpression, tankStringWriter.toString());
 
         } catch (IOException e) {
             e.printStackTrace();
