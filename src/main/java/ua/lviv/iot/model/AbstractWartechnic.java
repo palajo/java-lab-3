@@ -7,17 +7,16 @@ public abstract class AbstractWartechnic {
     private int maxSpeed;
     private int passengersCapacity;
     private double fireRange;
-    private Levels damage;
     private int armorType;
+    private Integer id;
 
     public AbstractWartechnic(final int engineVolume, final double fuelConsumption, final int maxSpeed, final int passengersCapacity,
-                              final double fireRange, final Levels damage, final int armorType) {
+                              final double fireRange, final int armorType) {
         this.engineVolume = engineVolume;
         this.fuelConsumption = fuelConsumption;
         this.maxSpeed = maxSpeed;
         this.passengersCapacity = passengersCapacity;
         this.fireRange = fireRange;
-        this.damage = damage;
         this.armorType = armorType;
     }
 
@@ -64,14 +63,6 @@ public abstract class AbstractWartechnic {
         this.fireRange = fireRange;
     }
 
-    public final Levels getDamage() {
-        return damage;
-    }
-
-    public final void setDamage(final Levels damage) {
-        this.damage = damage;
-    }
-
     public final int getArmorType() {
         return armorType;
     }
@@ -92,9 +83,15 @@ public abstract class AbstractWartechnic {
                 + getMaxSpeed() + ","
                 + getPassengersCapacity() + ","
                 + getFuelConsumption() + ","
-                + getDamage() + ","
                 + getArmorType();
     }
 
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

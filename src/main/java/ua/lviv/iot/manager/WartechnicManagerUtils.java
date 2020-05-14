@@ -8,8 +8,9 @@ import java.util.List;
 
 public class WartechnicManagerUtils {
 
+    /*
     //anonymous class with comparator
-    private static Comparator<Tank> compareByPatency = new Comparator<>() {
+    private static Comparator<Tank> compareByPatency = new Comparator<Tank>() {
 
         @Override
         public int compare(final Tank firstTank, final Tank secondTank) {
@@ -17,6 +18,7 @@ public class WartechnicManagerUtils {
         }
 
     };
+
 
     // method for - anonymous class with comparator
     public static void sortByPatency(final List<Tank> tanks, final SortType sortType) {
@@ -75,5 +77,5 @@ public class WartechnicManagerUtils {
         Comparator<Tank> comparator = Comparator.comparing(Tank::getArmorType);
         tanks.sort(sortType == SortType.ASCENDING ? comparator : comparator.reversed());
     }
-
+    */
 }

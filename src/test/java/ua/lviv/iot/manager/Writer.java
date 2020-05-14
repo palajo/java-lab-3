@@ -11,6 +11,7 @@ import java.io.StringWriter;
 
 public class Writer {
 
+    /*
     @Test
     public void inputManager() throws IOException {
 
@@ -57,4 +58,6 @@ public class Writer {
             e.printStackTrace();
         }
     }
+
+     */
 }

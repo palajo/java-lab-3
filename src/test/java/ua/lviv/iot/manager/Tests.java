@@ -7,6 +7,7 @@ import ua.lviv.iot.model.SortType;
 
 public class Tests extends BaseWartechnicManagerTest {
 
+    /*
     @Test
     public void testSortingAnonymousClass() {
         WartechnicManagerUtils.sortByPatency(tanks, SortType.ASCENDING);
@@ -34,5 +35,5 @@ public class Tests extends BaseWartechnicManagerTest {
         Assertions.assertEquals(270, tanks.get(1).getOverviewInDegrees());
         Assertions.assertEquals(360, tanks.get(2).getOverviewInDegrees());
     }
-
+    */
 }
