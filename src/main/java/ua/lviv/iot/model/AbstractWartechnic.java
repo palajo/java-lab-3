@@ -1,17 +1,17 @@
 package ua.lviv.iot.model;
 
-public class AbstractWartechnic {
+public abstract class AbstractWartechnic {
 
-    private int engineVolume;
-    private double fuelConsumption;
-    private int maxSpeed;
-    private int passengersCapacity;
-    private double fireRange;
-    private Levels damage;
-    private int armorType;
+    int engineVolume;
+    double fuelConsumption;
+    int maxSpeed;
+    int passengersCapacity;
+    double fireRange;
+    Levels damage;
+    int armorType;
 
-    public AbstractWartechnic(final int engineVolume, final double fuelConsumption, final int maxSpeed, final int passengersCapacity,
-                              final double fireRange, final Levels damage, final int armorType) {
+    public AbstractWartechnic(int engineVolume, double fuelConsumption, int maxSpeed, int passengersCapacity,
+                              double fireRange, Levels damage, int armorType) {
         this.engineVolume = engineVolume;
         this.fuelConsumption = fuelConsumption;
         this.maxSpeed = maxSpeed;
@@ -64,11 +64,11 @@ public class AbstractWartechnic {
         this.fireRange = fireRange;
     }
 
-    public final Levels getDamage() {
+    public Levels getDamage() {
         return damage;
     }
 
-    public final void setDamage(final Levels damage) {
+    public void setDamage(Levels damage) {
         this.damage = damage;
     }
 
@@ -82,20 +82,17 @@ public class AbstractWartechnic {
 
 
     public String getHeaders() {
-        return "[" + "engineVolume" + "," + " fuelConsumption " + "," + " maxSpeed" + "," + " passengersCapacity"
-                + "," + "fireRange" + "," + "damage" + "," + "armorType" + "]";
+        return "engineVolume" + "," + "fuelConsumption" + "," + "maxSpeed" + "," + "passengersCapacity"
+                + "," + "fireRange" + "," + "damage" + "," + "armorType";
     }
 
     public String toCSV() {
-        return  "["
-                + "engineVolume = " + getEngineVolume() + ","
-                + " fuelConsumption = " + getFuelConsumption() + ","
-                + " maxSpeed = " + getMaxSpeed() + ","
-                + " passengersCapacity = " + getPassengersCapacity()
-                + " fireRange = " + getFuelConsumption() + ","
-                + " damage = " + getDamage() + ","
-                + " armorType = " + getArmorType();
+        return getEngineVolume() + ","
+                + getFuelConsumption() + ","
+                + getMaxSpeed() + ","
+                + getPassengersCapacity() + ","
+                + getFuelConsumption() + ","
+                + getArmorType();
     }
-
 
 }

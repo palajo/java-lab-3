@@ -6,9 +6,7 @@ public class Tank extends AbstractWartechnic {
 
     int overviewInDegrees;
 
-    public Tank(final int engineVolume, final double fuelConsumption, final int maxSpeed, final int passengersCapacity,
-                final double fireRange, final Levels damage, final int armorType, final Levels patency,
-                final int overviewInDegrees) {
+    public Tank(int engineVolume, double fuelConsumption, int maxSpeed, int passengersCapacity, double fireRange, Levels damage, int armorType, Levels patency, int overviewInDegrees) {
         super(engineVolume, fuelConsumption, maxSpeed, passengersCapacity, fireRange, damage, armorType);
         this.patency = patency;
         this.overviewInDegrees = overviewInDegrees;
@@ -17,11 +15,11 @@ public class Tank extends AbstractWartechnic {
     public Tank(){
     }
 
-    public final Levels getPatency() {
+    public Levels getPatency() {
         return patency;
     }
 
-    public final void setPatency(final Levels patency) {
+    public void setPatency(Levels patency) {
         this.patency = patency;
     }
 
@@ -34,11 +32,11 @@ public class Tank extends AbstractWartechnic {
     }
 
     public final String getHeaders() {
-        return super.getHeaders() + "," + " patency" + "," + " overviewInDegrees";
+        return super.getHeaders() + "," + "patency" + "," + "overviewInDegrees";
     }
 
     public final String toCSV() {
-        return super.toCSV() + "," + " patency = " + getPatency() + "," + " overviewInDegrees = " + getOverviewInDegrees() + "]";
+        return super.toCSV() + "," + getOverviewInDegrees();
     }
 
 }

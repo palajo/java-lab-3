@@ -1,2 +1,3 @@
-[engineVolume = 6, fuelConsumption = 32.0, maxSpeed = 160, passengersCapacity = 8 fireRange = 32.0, damage = HIGH, armorType = 1, patency = HIGH, overviewInDegrees = 360]
-[engineVolume = 6, fuelConsumption = 32.0, maxSpeed = 160, passengersCapacity = 8 fireRange = 32.0, damage = HIGH, armorType = 1, patency = HIGH, overviewInDegrees = 360]
+engineVolume,fuelConsumption,maxSpeed,passengersCapacity,fireRange,damage,armorType,patency,overviewInDegrees
+6,32.0,160,8,32.0,1,360
+6,32.0,160,8,32.0,1,360
