@@ -1,16 +1,15 @@
 package ua.lviv.iot.model;
 
-import ua.lviv.iot.manager.WartechnicManager;
-
 public class BTR extends AbstractWartechnic {
 
     int wheelsQuantity;
 
     double trunkCapacity;
 
-    public BTR(double engineVolume, double fuelConsumption, double maxSpeed, int passengersCapacity, double fireRange,
-               Levels damage, Types armorType, int wheelsQuantity, double trunkCapacity) {
-        super(engineVolume, fuelConsumption, maxSpeed, passengersCapacity, fireRange, damage, armorType);
+    public BTR(final int engineVolume, final double fuelConsumption, final int maxSpeed, final int passengersCapacity,
+               final double fireRange, final int armorType, final int wheelsQuantity,
+               final double trunkCapacity) {
+        super(engineVolume, fuelConsumption, maxSpeed, passengersCapacity, fireRange, armorType);
         this.wheelsQuantity = wheelsQuantity;
         this.trunkCapacity = trunkCapacity;
     }
@@ -18,19 +17,19 @@ public class BTR extends AbstractWartechnic {
     public BTR() {
     }
 
-    public int getWheelsQuantity() {
+    public final int getWheelsQuantity() {
         return wheelsQuantity;
     }
 
-    public void setWheelsQuantity(int wheelsQuantity) {
+    public final void setWheelsQuantity(final int wheelsQuantity) {
         this.wheelsQuantity = wheelsQuantity;
     }
 
-    public double getTrunkCapacity() {
+    public final double getTrunkCapacity() {
         return trunkCapacity;
     }
 
-    public void setTrunkCapacity(double trunkCapacity) {
+    public final void setTrunkCapacity(final double trunkCapacity) {
         this.trunkCapacity = trunkCapacity;
     }
 
