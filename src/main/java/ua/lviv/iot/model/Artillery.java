@@ -4,20 +4,20 @@ public class Artillery extends AbstractWartechnic {
 
     int rocketsQuantity;
 
-    public Artillery(double engineVolume, double fuelConsumption, double maxSpeed, int passengersCapacity,
-                     double fireRange, Levels damage, Types armorType, int rocketsQuantity) {
+    public Artillery(final int engineVolume, final double fuelConsumption, final int maxSpeed, final int passengersCapacity,
+                     final double fireRange, final Levels damage, final int armorType, final int rocketsQuantity) {
         super(engineVolume, fuelConsumption, maxSpeed, passengersCapacity, fireRange, damage, armorType);
         this.rocketsQuantity = rocketsQuantity;
     }
 
-    public Artillery(){
+    public Artillery() {
     }
 
-    public int getRocketsQuantity() {
+    public final int getRocketsQuantity() {
         return rocketsQuantity;
     }
 
-    public void setRocketsQuantity(int rocketsQuantity) {
+    public final void setRocketsQuantity(final int rocketsQuantity) {
         this.rocketsQuantity = rocketsQuantity;
     }
 
