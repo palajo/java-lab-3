@@ -1,5 +1,13 @@
 package ua.lviv.iot.model;
 
+
+import javax.management.MXBean;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public abstract class AbstractWartechnic {
 
     private int engineVolume;
@@ -8,6 +16,8 @@ public abstract class AbstractWartechnic {
     private int passengersCapacity;
     private double fireRange;
     private int armorType;
+    @Id
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private Integer id;
 
     public AbstractWartechnic(final int engineVolume, final double fuelConsumption, final int maxSpeed, final int passengersCapacity,

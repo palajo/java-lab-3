@@ -1,5 +1,8 @@
 package ua.lviv.iot.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Tank extends AbstractWartechnic {
 
     int overviewInDegrees;
