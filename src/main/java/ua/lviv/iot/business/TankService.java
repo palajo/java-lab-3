@@ -1,6 +1,7 @@
 package ua.lviv.iot.business;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import ua.lviv.iot.model.Tank;
 import ua.lviv.iot.repository.TankRepository;
@@ -8,48 +9,25 @@ import ua.lviv.iot.repository.TankRepository;
 import java.util.List;
 
 @Service
-public class TankService {
+public class TankService extends AbstractService<Tank> {
 
     @Autowired
-    private TankRepository tanksRepository;
+    private TankRepository tankRepository;
 
-    public List getTanks() {
-        return tanksRepository.findAll();
+    @Override
+    protected JpaRepository<Tank, Integer> getRepository() {
+        return tankRepository;
     }
 
-    public final Tank getTankById(Integer tankId) {
-        return tanksRepository.findById(tankId).get();
-    }
-
-    public Tank createTank(Tank tanks) {
-        return tanksRepository.save(tanks);
-    }
-
-    public final void deleteTankById(Integer tankId) {
-        tanksRepository.deleteById(tankId);
-    }
-
-    public final Tank updateTankById(Integer tankId, Tank newTank) {
-
-        if (tanksRepository.existsById(tankId)) {
-
-            Tank tank = tanksRepository.findById(tankId).orElseThrow(NullPointerException::new);
-
-            tank.setOverviewInDegrees(newTank.getOverviewInDegrees());
-            tank.setArmorType(newTank.getArmorType());
-            tank.setEngineVolume(newTank.getEngineVolume());
-            tank.setFireRange(newTank.getFireRange());
-            tank.setFuelConsumption(newTank.getFuelConsumption());
-            tank.setMaxSpeed(newTank.getMaxSpeed());
-            tank.setPassengersCapacity(newTank.getPassengersCapacity());
-            tank.setId(newTank.getId());
-
-            tanksRepository.save(tank);
+    @Override
+    public Tank update(Tank tank, Integer id) {
+        if (tankRepository.existsById(id)) {
+            this.deleteById(id);
+            tank.setId(id);
+            tankRepository.save(tank);
             return tank;
-
         } else {
             return null;
         }
     }
-
 }

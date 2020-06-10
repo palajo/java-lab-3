@@ -33,51 +33,51 @@ public abstract class AbstractWartechnic {
     public AbstractWartechnic() {
     }
 
-    public final int getEngineVolume() {
+    public int getEngineVolume() {
         return engineVolume;
     }
 
-    public final void setEngineVolume(final int engineVolume) {
+    public void setEngineVolume(final int engineVolume) {
         this.engineVolume = engineVolume;
     }
 
-    public final double getFuelConsumption() {
+    public double getFuelConsumption() {
         return fuelConsumption;
     }
 
-    public final void setFuelConsumption(final double fuelConsumption) {
+    public void setFuelConsumption(final double fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
 
-    public final int getMaxSpeed() {
+    public int getMaxSpeed() {
         return maxSpeed;
     }
 
-    public final void setMaxSpeed(final int maxSpeed) {
+    public void setMaxSpeed(final int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
 
-    public final int getPassengersCapacity() {
+    public int getPassengersCapacity() {
         return passengersCapacity;
     }
 
-    public final void setPassengersCapacity(final int passengersCapacity) {
+    public void setPassengersCapacity(final int passengersCapacity) {
         this.passengersCapacity = passengersCapacity;
     }
 
-    public final double getFireRange() {
+    public double getFireRange() {
         return fireRange;
     }
 
-    public final void setFireRange(final double fireRange) {
+    public void setFireRange(final double fireRange) {
         this.fireRange = fireRange;
     }
 
-    public final int getArmorType() {
+    public int getArmorType() {
         return armorType;
     }
 
-    public final void setArmorType(final int armorType) {
+    public void setArmorType(final int armorType) {
         this.armorType = armorType;
     }
 
