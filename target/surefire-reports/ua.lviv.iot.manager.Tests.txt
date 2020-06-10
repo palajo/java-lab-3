@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: ua.lviv.iot.manager.Tests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec <<< FAILURE!
+ua.lviv.iot.manager.Tests.testSortingAnonymousClass()  Time elapsed: 0.028 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.lviv.iot.manager.WartechnicManagerUtils.sortByPatency(WartechnicManagerUtils.java:24)
+	at ua.lviv.iot.manager.Tests.testSortingAnonymousClass(Tests.java:12)
+
+ua.lviv.iot.manager.Tests.testSortingStaticInnerClass()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.lviv.iot.manager.WartechnicManagerUtils.sortByMaxSpeed(WartechnicManagerUtils.java:40)
+	at ua.lviv.iot.manager.Tests.testSortingStaticInnerClass(Tests.java:21)
+
+ua.lviv.iot.manager.Tests.testSortingInnerClass()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at ua.lviv.iot.manager.WartechnicManagerUtils.sortByOverviewInDegrees(WartechnicManagerUtils.java:60)
+	at ua.lviv.iot.manager.Tests.testSortingInnerClass(Tests.java:31)
+

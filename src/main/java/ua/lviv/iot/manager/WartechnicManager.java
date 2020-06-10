@@ -7,26 +7,29 @@ import java.util.List;
 
 public class WartechnicManager {
 
-    private List<Tank> technicInGarage = new ArrayList<>();
+    private List<Tank> tanks = new ArrayList<>();
 
-    public void removeTankFromGarage(Tank... tankToRemove) {
-        for (Tank tank : tankToRemove) {
-            this.technicInGarage.remove(tank);
-        }
+    public final void addTanksToGarage(final List<Tank> tanksToAdd) {
+        this.tanks.addAll(tanksToAdd);
     }
 
-    public void addTanksToGarage(List<Tank> tanksToAdd) {
-        this.technicInGarage.addAll(tanksToAdd);
-    }
+    public final List<Tank> findTechnicByFuelConsumption(final double fuelConsumptionToCompare) {
 
-    public List<Tank> findTechnicByFuelConsumption(double fuelConsumptionToCompare) {
-        ArrayList<Tank> result = new ArrayList<Tank>();
-        for (Tank tank : this.technicInGarage) {
+        ArrayList<Tank> result = new ArrayList<>();
+
+        for (Tank tank : this.tanks) {
             if (tank.getFuelConsumption() < fuelConsumptionToCompare) {
                 result.add(tank);
             }
         }
+
         return result;
+    }
+
+    public final void displayTanksInfo() {
+        for (Tank tank : this.tanks) {
+            System.out.println(tank);
+        }
     }
 
 }
